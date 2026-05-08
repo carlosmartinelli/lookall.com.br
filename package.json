@@ -16,6 +16,6 @@
 		"sass": "^1.99.0"
 	},
 	"pnpm": {
-		"allowBuild": ["@parcel/watcher"]
+		"allowBuild": ["@parcel/watcher", "esbuild", "sharp"]
 	}
 }
