@@ -1,0 +1,84 @@
+---
+const faqs = [
+  {
+    question: 'Quanto custa trabalhar com a Lookall?',
+    answer: 'Nossos planos começam a partir de R$ 1.500/mês e são personalizados de acordo com as necessidades da sua empresa. Agende um diagnóstico gratuito e montamos uma proposta sob medida.',
+  },
+  {
+    question: 'A Lookall atende empresas de outras cidades além de São Paulo?',
+    answer: 'Sim! Trabalhamos 100% de forma remota e atendemos empresas em todo o Brasil. Já temos clientes em São Paulo, Rio de Janeiro, Belo Horizonte, Florianópolis e muitas outras cidades.',
+  },
+  {
+    question: 'Vocês criam o conteúdo ou apenas gerenciam?',
+    answer: 'Fazemos tudo: criamos o conteúdo estratégico, produzimos os materiais visuais, publicamos e gerenciamos a performance. Você só precisa revisar e aprovar.',
+  },
+  {
+    question: 'Posso cancelar o serviço quando quiser?',
+    answer: 'Sim. Nossos contratos são mensais sem multa de cancelamento. Acreditamos que você deve ficar porque está satisfeito com os resultados, não porque está preso num contrato.',
+  },
+  {
+    question: 'Quanto tempo leva para meu site ficar pronto?',
+    answer: 'Projetos de sites costumam levar de 3 a 6 semanas, dependendo da complexidade. Projetos de landing pages podem ser entregues em até 1 semana após a aprovação do briefing.',
+  },
+  {
+    question: 'Vocês trabalham com e-commerce?',
+    answer: 'Sim! Desenvolvemos lojas virtuais completas em plataformas como Shopify, WooCommerce e soluções customizadas. Incluindo integração com sistemas de pagamento, logística e marketplaces.',
+  },
+];
+---
+
+<section
+  id="faq"
+  class="bg-white py-20 px-4 sm:px-6 lg:px-8"
+  aria-labelledby="faq-heading"
+>
+  <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+
+    <!-- Left: Headline -->
+    <div class="lg:sticky lg:top-24">
+      <span class="text-sm font-bold text-[#f5c518] uppercase tracking-widest">FAQ</span>
+      <h2
+        id="faq-heading"
+        class="mt-3 text-3xl md:text-4xl lg:text-5xl font-black text-[#0b0f1a] leading-tight text-balance"
+      >
+        Tirando suas dúvidas antes mesmo de você perguntar
+      </h2>
+      <p class="mt-6 text-lg text-[#5b6473] leading-relaxed">
+        Reunimos as perguntas mais frequentes dos nossos clientes. Não encontrou o que procura?
+      </p>
+      <a
+        href="https://wa.me/5511999999999"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="mt-6 inline-flex items-center gap-2 px-6 py-3 bg-[#1fbf6b] text-white font-bold rounded-full hover:bg-[#17a85e] transition-colors"
+        aria-label="Falar no WhatsApp"
+      >
+        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+          <path d="M12 0C5.373 0 0 5.373 0 12c0 2.136.563 4.14 1.545 5.874L0 24l6.299-1.52A11.953 11.953 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-4.991-1.363l-.358-.212-3.741.903.943-3.638-.233-.374A9.817 9.817 0 012.182 12C2.182 6.56 6.56 2.182 12 2.182S21.818 6.56 21.818 12 17.44 21.818 12 21.818z"/>
+        </svg>
+        Perguntar no WhatsApp
+      </a>
+    </div>
+
+    <!-- Right: FAQ items -->
+    <div class="space-y-4">
+      {faqs.map((faq) => (
+        <details class="group border border-[#e8eaee] rounded-xl overflow-hidden hover:border-[#f5c518] transition-colors">
+          <summary class="flex items-center justify-between px-6 py-5 cursor-pointer list-none select-none bg-[#fafbfd] group-open:bg-[#f5c518]/5 group-open:border-b group-open:border-[#e8eaee]">
+            <span class="font-semibold text-[#0b0f1a] text-base pr-4">{faq.question}</span>
+            <span class="chevron flex-shrink-0 w-6 h-6 text-[#5b6473] group-open:text-[#f5c518] transition-all" aria-hidden="true">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </span>
+          </summary>
+          <div class="px-6 pb-6 pt-4 bg-white">
+            <p class="text-[#5b6473] leading-relaxed">{faq.answer}</p>
+          </div>
+        </details>
+      ))}
+    </div>
+
+  </div>
+</section>

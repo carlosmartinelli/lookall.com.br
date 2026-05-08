@@ -1,0 +1,54 @@
+---
+const stats = [
+  { value: '+106', label: 'Clientes ativos que crescem com a Lookall', color: 'blue' },
+  { value: '83',   label: 'Projetos digitais entregues com sucesso', color: 'green' },
+];
+---
+
+<section
+  id="resultados"
+  class="bg-white py-20 px-4 sm:px-6 lg:px-8"
+  aria-labelledby="stats-heading"
+>
+  <div class="max-w-7xl mx-auto">
+    <!-- Top: two-column -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-14">
+      <div>
+        <span class="text-sm font-bold text-[#f5c518] uppercase tracking-widest">Nossos Números</span>
+        <h2
+          id="stats-heading"
+          class="mt-3 text-3xl md:text-4xl lg:text-5xl font-black text-[#0b0f1a] leading-tight"
+        >
+          Números que <span class="italic text-[#2e5bff]">fazem a caixa</span> da<br />
+          sua empresa girar.
+        </h2>
+      </div>
+      <div class="flex flex-col gap-5">
+        <p class="text-lg text-[#5b6473] leading-relaxed">
+          Mais de uma centena de empresas já transformaram seu crescimento digital com a Lookall. Cada número representa uma história de sucesso real.
+        </p>
+        <a
+          href="#contato"
+          class="self-start inline-flex items-center gap-2 px-6 py-3 bg-[#0b0f1a] text-white font-bold rounded-full hover:bg-[#1a2130] transition-colors"
+        >
+          Quero esses resultados
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- Stats: 2 large cards -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-2xl">
+      {stats.map((stat) => (
+        <div class={`group p-8 rounded-2xl border transition-all duration-300 hover:-translate-y-1 hover:shadow-lg ${stat.color === 'blue' ? 'border-[#2e5bff]/20 bg-[#2e5bff]/5 hover:border-[#2e5bff]/40' : 'border-[#1fbf6b]/20 bg-[#1fbf6b]/5 hover:border-[#1fbf6b]/40'}`}>
+          <p class={`text-6xl lg:text-7xl font-black mb-3 ${stat.color === 'blue' ? 'text-[#2e5bff]' : 'text-[#1fbf6b]'}`}>
+            {stat.value}
+          </p>
+          <p class="text-base text-[#374151] leading-snug">{stat.label}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,5 +1,9 @@
 # Astro Starter Kit: Basics
 
+Website for [lookall.com.br](https://lookall.com.br) — a local IT agency based in Brazil specializing in software development, consulting, marketing, and SEO for local businesses.
+
+The site is heavily focused on SEO and web performance. Page speed and Core Web Vitals are a priority in every feature and change.
+
 ```sh
 pnpm create astro@latest -- --template basics
 ```
@@ -32,9 +36,9 @@ To learn more about the folder structure of an Astro project, refer to [our guid
 
 All commands are run from the root of the project, from a terminal:
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `pnpm install`             | Installs dependencies                            |
+| Command                | Action                                           |
+| :--------------------- | :----------------------------------------------- |
+| `pnpm install`         | Installs dependencies                            |
 | `pnpm dev`             | Starts local dev server at `localhost:4321`      |
 | `pnpm build`           | Build your production site to `./dist/`          |
 | `pnpm preview`         | Preview your build locally, before deploying     |

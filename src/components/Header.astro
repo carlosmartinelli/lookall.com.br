@@ -1,0 +1,111 @@
+---
+const navLinks = [
+  { label: 'Agência', href: '#agencia' },
+  { label: 'Serviços', href: '#servicos' },
+  { label: 'Blog', href: '#blog' },
+  { label: 'Contato', href: '#contato' },
+];
+---
+
+<header
+  id="site-header"
+  class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-[#e8eaee] transition-shadow duration-300"
+  aria-label="Cabeçalho principal"
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16 lg:h-18">
+      <!-- Logo -->
+      <a href="/" class="flex items-center no-underline" aria-label="Lookall - página inicial">
+        <img
+          src="/logo.png"
+          alt="Lookall"
+          width="150"
+          height="42"
+          class="h-9 w-auto"
+          loading="eager"
+        />
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex items-center gap-8" aria-label="Navegação principal">
+        {navLinks.map((link) => (
+          <a
+            href={link.href}
+            class="text-sm font-medium text-[#374151] hover:text-[#0b0f1a] transition-colors duration-200"
+          >
+            {link.label}
+          </a>
+        ))}
+      </nav>
+
+      <!-- CTA Button -->
+      <div class="flex items-center gap-4">
+        <a
+          href="#contato"
+          class="hidden sm:inline-flex items-center px-5 py-2.5 bg-[#f5c518] text-[#0b0f1a] font-semibold text-sm rounded-full hover:bg-[#e6b800] transition-colors duration-200 shadow-sm"
+          aria-label="Agendar diagnóstico gratuito"
+        >
+          Agendar Diagnóstico
+        </a>
+
+        <!-- Mobile hamburger -->
+        <button
+          id="menu-toggle"
+          class="md:hidden p-2 rounded-md text-[#374151] hover:bg-gray-100 transition-colors"
+          aria-label="Abrir menu"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+        >
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div
+    id="mobile-menu"
+    class="md:hidden hidden bg-white border-t border-[#e8eaee]"
+    aria-label="Menu mobile"
+  >
+    <nav class="px-4 py-4 flex flex-col gap-4">
+      {navLinks.map((link) => (
+        <a
+          href={link.href}
+          class="text-base font-medium text-[#374151] hover:text-[#0b0f1a] py-1 transition-colors"
+        >
+          {link.label}
+        </a>
+      ))}
+      <a
+        href="#contato"
+        class="inline-flex items-center justify-center px-5 py-3 bg-[#f5c518] text-[#0b0f1a] font-semibold text-sm rounded-full hover:bg-[#e6b800] transition-colors mt-2"
+      >
+        Agendar Diagnóstico
+      </a>
+    </nav>
+  </div>
+</header>
+
+<script>
+  // Sticky shadow on scroll
+  const header = document.getElementById('site-header');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 10) {
+      header?.classList.add('header-scrolled');
+    } else {
+      header?.classList.remove('header-scrolled');
+    }
+  }, { passive: true });
+
+  // Mobile menu toggle
+  const toggle = document.getElementById('menu-toggle');
+  const menu = document.getElementById('mobile-menu');
+  toggle?.addEventListener('click', () => {
+    const isOpen = !menu?.classList.contains('hidden');
+    menu?.classList.toggle('hidden');
+    toggle.setAttribute('aria-expanded', String(!isOpen));
+  });
+</script>

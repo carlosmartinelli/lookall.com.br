@@ -1,0 +1,112 @@
+---
+const newsCards = [
+  {
+    category: 'Notícias Marketing',
+    title: 'Como o marketing de conteúdo pode triplicar seu tráfego orgânico em 6 meses',
+    excerpt: 'Estratégias comprovadas para pequenas e médias empresas conquistarem autoridade no Google e atrair clientes qualificados.',
+    date: 'Mai 2026',
+  },
+  {
+    category: 'Notícias Marketing',
+    title: 'Automatize seu funil de vendas com IA e pare de perder leads qualificados',
+    excerpt: 'Ferramentas e fluxos automáticos que mantêm seus leads engajados do primeiro contato até o fechamento.',
+    date: 'Abr 2026',
+  },
+  {
+    category: 'Notícias Marketing',
+    title: 'Google SGE e o futuro do SEO: o que sua empresa precisa saber agora',
+    excerpt: 'A busca generativa chegou. Saiba como adaptar sua estratégia e manter a visibilidade orgânica.',
+    date: 'Abr 2026',
+  },
+];
+---
+
+<section
+  id="agencia"
+  class="py-20 px-4 sm:px-6 lg:px-8 bg-[#0b0f1a]"
+  aria-labelledby="about-heading"
+>
+  <div class="max-w-7xl mx-auto">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
+
+      <!-- Left panel: image + stats overlay -->
+      <div class="relative rounded-3xl overflow-hidden min-h-[480px]">
+        <!-- Dark gradient background with person silhouette illustration -->
+        <div class="absolute inset-0 bg-gradient-to-br from-[#1a2346] to-[#0b0f1a]"></div>
+
+        <!-- Eyebrow label -->
+        <div class="absolute top-8 left-8 z-10">
+          <span class="inline-flex items-center gap-2 text-xs font-bold text-white/50 uppercase tracking-widest">
+            <span class="w-2 h-2 rounded-full bg-[#f5c518]"></span>
+            Quem Somos
+          </span>
+        </div>
+
+        <!-- Decorative circles -->
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 border border-white/5 rounded-full" aria-hidden="true"></div>
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 border border-white/5 rounded-full" aria-hidden="true"></div>
+
+        <!-- Person icon -->
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-28 h-28 bg-white/5 border border-white/10 rounded-full flex items-center justify-center" aria-hidden="true">
+          <svg class="w-16 h-16 text-white/20" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 12c2.7 0 5-2.3 5-5s-2.3-5-5-5-5 2.3-5 5 2.3 5 5 5zm0 2c-3.3 0-10 1.7-10 5v2h20v-2c0-3.3-6.7-5-10-5z"/>
+          </svg>
+        </div>
+
+        <!-- Stats at bottom -->
+        <div class="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-[#0b0f1a] via-[#0b0f1a]/80 to-transparent">
+          <div class="grid grid-cols-2 gap-4">
+            <div>
+              <p class="text-5xl font-black text-white">87</p>
+              <p class="text-sm text-white/50 mt-1">Empresas locais atendidas</p>
+            </div>
+            <div>
+              <p class="text-5xl font-black text-[#f5c518]">106</p>
+              <p class="text-sm text-white/50 mt-1">Projetos concluídos</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right panel: news cards -->
+      <div class="flex flex-col gap-4">
+        <div class="mb-2">
+          <span class="text-xs font-bold text-white/40 uppercase tracking-widest">Notícias Marketing</span>
+        </div>
+
+        {newsCards.map((card) => (
+          <a
+            href="#blog"
+            class="group flex gap-5 bg-white/5 border border-white/10 rounded-2xl p-5 hover:bg-white/10 hover:border-[#f5c518]/30 transition-all duration-300"
+          >
+            <!-- Thumbnail placeholder -->
+            <div class="flex-shrink-0 w-20 h-16 bg-white/10 rounded-xl flex items-center justify-center">
+              <svg class="w-8 h-8 text-white/20" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+              </svg>
+            </div>
+
+            <div class="flex flex-col justify-between min-w-0">
+              <div>
+                <div class="flex items-center gap-2 mb-1.5">
+                  <span class="text-[10px] font-bold text-[#f5c518] uppercase tracking-wider">{card.category}</span>
+                  <span class="text-white/20 text-xs">&bull;</span>
+                  <span class="text-[10px] text-white/40">{card.date}</span>
+                </div>
+                <h3 class="text-sm font-semibold text-white group-hover:text-[#f5c518] transition-colors leading-snug line-clamp-2">
+                  {card.title}
+                </h3>
+              </div>
+              <p class="text-xs text-white/40 leading-relaxed mt-1.5 line-clamp-2 hidden sm:block">{card.excerpt}</p>
+            </div>
+          </a>
+        ))}
+
+        <a href="#blog" class="self-start text-sm font-semibold text-[#f5c518] hover:underline mt-1">
+          Ver todos os artigos &rarr;
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>

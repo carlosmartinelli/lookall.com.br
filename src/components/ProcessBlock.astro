@@ -1,0 +1,55 @@
+---
+const steps = [
+  {
+    number: '01',
+    title: 'Diagnóstico',
+    description: 'Entendemos seu negócio, mercado, desafios e objetivos. Diagnóstico completo antes de construir qualquer coisa — sem suposições.',
+  },
+  {
+    number: '02',
+    title: 'Arquitetura',
+    description: 'Desenhamos o sistema, automações e estratégia de aquisição: o blueprint completo da operação digital da sua empresa.',
+  },
+  {
+    number: '03',
+    title: 'Implementação',
+    description: 'Construímos e lançamos CRM, páginas, IA e tudo na prática — rápido, limpo e sem disrupção no seu negócio.',
+  },
+];
+---
+
+<section
+  id="processo"
+  class="bg-[#f7f7f7] py-20 px-4 sm:px-6 lg:px-8"
+  aria-labelledby="processo-heading"
+>
+  <div class="max-w-7xl mx-auto">
+    <!-- Section header -->
+    <div class="mb-14 max-w-xl">
+      <span class="inline-flex items-center gap-2 text-xs font-bold text-[#f5c518] uppercase tracking-widest mb-4">
+        <span aria-hidden="true">&rarr;</span> PROCESSO
+      </span>
+      <h2
+        id="processo-heading"
+        class="text-3xl md:text-4xl font-black text-[#18160f] leading-tight"
+      >
+        Como construímos sua<br />operação digital
+      </h2>
+      <p class="mt-4 text-base text-[#5c564c] max-w-md">
+        Um processo claro e transparente — do diagnóstico ao lançamento — com resultados mensuráveis em cada etapa.
+      </p>
+    </div>
+
+    <!-- Steps grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      {steps.map((step) => (
+        <article class="group bg-white border border-black/[0.06] rounded-xl p-7 hover:shadow-md transition-shadow duration-200">
+          <!-- Large left-aligned number -->
+          <div class="text-4xl font-black text-[#f5c518] mb-4 leading-none">{step.number}</div>
+          <h3 class="text-lg font-bold text-[#18160f] mb-2">{step.title}</h3>
+          <p class="text-sm text-[#5c564c] leading-relaxed">{step.description}</p>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
