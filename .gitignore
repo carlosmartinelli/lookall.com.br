@@ -26,5 +26,7 @@ node_modules/
 
 #Local personal files
 .cursorrules
-ruvectors.db
 ruvector.db
+agentdb.rvf
+agentdb.rvf.lock
+agentdb.rvf.lock
