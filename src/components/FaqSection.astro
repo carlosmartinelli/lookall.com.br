@@ -1,4 +1,6 @@
 ---
+import '../styles/faq.scss';
+
 const faqs = [
   {
     question: 'Quanto custa trabalhar com a Lookall?',
@@ -64,7 +66,7 @@ const faqs = [
     <!-- Right: FAQ items -->
     <div class="space-y-4">
       {faqs.map((faq) => (
-        <details class="group border border-[#e8eaee] rounded-xl overflow-hidden hover:border-[#f5c518] transition-colors">
+        <details class="faq-item group">
           <summary class="flex items-center justify-between px-6 py-5 cursor-pointer list-none select-none bg-[#fafbfd] group-open:bg-[#f5c518]/5 group-open:border-b group-open:border-[#e8eaee]">
             <span class="font-semibold text-[#0b0f1a] text-base pr-4">{faq.question}</span>
             <span class="chevron flex-shrink-0 w-6 h-6 text-[#5b6473] group-open:text-[#f5c518] transition-all" aria-hidden="true">
@@ -73,7 +75,7 @@ const faqs = [
               </svg>
             </span>
           </summary>
-          <div class="px-6 pb-6 pt-4 bg-white">
+          <div class="faq-answer">
             <p class="text-[#5b6473] leading-relaxed">{faq.answer}</p>
           </div>
         </details>

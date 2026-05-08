@@ -1,0 +1,68 @@
+$clr-yellow: #f5c518;
+$clr-border:  #e8eaee;
+$clr-text:    #0b0f1a;
+$clr-muted:   #5b6473;
+$clr-surface: #fafbfd;
+
+.faq-item {
+  border: 1px solid $clr-border;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  transition: border-color 0.2s ease;
+
+  &:hover {
+    border-color: $clr-yellow;
+  }
+
+  summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.25rem 1.5rem;
+    cursor: pointer;
+    background: $clr-surface;
+
+    span {
+      font-weight: 600;
+      color: $clr-text;
+    }
+
+    .chevron {
+      flex-shrink: 0;
+      color: $clr-muted;
+      transition: transform 0.3s ease, color 0.2s ease;
+    }
+  }
+
+  &[open] {
+    summary {
+      background: rgba($clr-yellow, 0.05);
+      border-bottom: 1px solid $clr-border;
+
+      .chevron {
+        transform: rotate(180deg);
+        color: $clr-yellow;
+      }
+    }
+
+    .faq-answer {
+      animation: faq-open 0.2s ease;
+    }
+  }
+
+  .faq-answer {
+    padding: 1rem 1.5rem 1.5rem;
+    background: white;
+
+    p {
+      color: $clr-muted;
+      line-height: 1.7;
+      margin: 0;
+    }
+  }
+}
+
+@keyframes faq-open {
+  from { opacity: 0; transform: translateY(-4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
